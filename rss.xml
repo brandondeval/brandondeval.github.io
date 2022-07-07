@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 07 Jul 2022 21:15:22 GMT</lastBuildDate><item><title><![CDATA[randomBlazinglyFastJSframework create new-static-developer-blog]]></title><description><![CDATA[This is my first post on my new github static blog! Much Wow! But whyyyy???! Sometimes in my careers I have encountered small tech related…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Thu, 07 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new github static blog! Much Wow!&lt;/p&gt;
+&lt;p&gt;But whyyyy???!&lt;/p&gt;
+&lt;p&gt;Sometimes in my careers I have encountered small tech related issues, concepts,
+or snippets of code I want to remember. This will be the place for me to write
+about topics i’m passionate about and  eventually have a searchable wiki on
+quick refences to things I commonly need to refer back to.&lt;/p&gt;
+&lt;p&gt;Stay tuned! 📺&lt;/p&gt;</content:encoded></item></channel></rss>
