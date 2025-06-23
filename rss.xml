@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://brandondeval.com</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 11 Jun 2025 02:29:10 GMT</lastBuildDate><item><title><![CDATA[Create a site - take two]]></title><description><![CDATA[It’s been a while since I posted my first blog post on this site. Let’s try this again!]]></description><link>https://brandondeval.com/hello-world-again/</link><guid isPermaLink="false">https://brandondeval.com/hello-world-again/</guid><pubDate>Tue, 10 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;It’s been a while since I posted my first blog post on this site.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://brandondeval.com</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 23 Jun 2025 22:49:34 GMT</lastBuildDate><item><title><![CDATA[Developer Table Stakes in 2025]]></title><description><![CDATA[There are no perfect list of what you need to be a developer. However, from looking at job posting this seems to
+be what I consider a list…]]></description><link>https://brandondeval.com/developer-table-stakes-2025/</link><guid isPermaLink="false">https://brandondeval.com/developer-table-stakes-2025/</guid><pubDate>Mon, 23 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;There are no perfect list of what you need to be a developer. However, from looking at job posting this seems to
+be what I consider a list of table stakes in 2025:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React&lt;/li&gt;
+&lt;li&gt;JavaScript/TypeScript&lt;/li&gt;
+&lt;li&gt;Node.js&lt;/li&gt;
+&lt;li&gt;MV* frameworks - Ruby on Rails, Spring&lt;/li&gt;
+&lt;li&gt;Java - every version&lt;/li&gt;
+&lt;li&gt;GraphQL&lt;/li&gt;
+&lt;li&gt;JSON&lt;/li&gt;
+&lt;li&gt;gRPC/Protobuf&lt;/li&gt;
+&lt;li&gt;Go&lt;/li&gt;
+&lt;li&gt;Docker&lt;/li&gt;
+&lt;li&gt;Kubernetes (Plus all the related tools like Helm, Kustomize, and all other CNCF projects)&lt;/li&gt;
+&lt;li&gt;Git&lt;/li&gt;
+&lt;li&gt;Github / Gitlab&lt;/li&gt;
+&lt;li&gt;IAC (Terraform, Pulumi, OpenTofu)&lt;/li&gt;
+&lt;li&gt;GitOps (ArgoCD)&lt;/li&gt;
+&lt;li&gt;CI/CD (GitHub Actions, Jenkins, CircleCI)&lt;/li&gt;
+&lt;li&gt;Agile/Scrum (DORA metrics)&lt;/li&gt;
+&lt;li&gt;RESTful API design and testing&lt;/li&gt;
+&lt;li&gt;SQL databases (PostgreSQL, MySQL, SQLite)&lt;/li&gt;
+&lt;li&gt;NoSQL databases (MongoDB, Redis)&lt;/li&gt;
+&lt;li&gt;Database performance (just denormalize everything and use indexes everywhere, screw ACID)&lt;/li&gt;
+&lt;li&gt;Basic Cloud platform knowledge (AWS/GCP)&lt;/li&gt;
+&lt;li&gt;Distributed systems concepts&lt;/li&gt;
+&lt;li&gt;Event-driven architecture (Kafka, RabbitMQ)&lt;/li&gt;
+&lt;li&gt;Microservices architecture&lt;/li&gt;
+&lt;li&gt;OpenTelemetry&lt;/li&gt;
+&lt;li&gt;Observability Collectors (Datadog, Prometheus, Grafana)&lt;/li&gt;
+&lt;li&gt;Developer service tooling (Backstage)&lt;/li&gt;
+&lt;li&gt;Service-oriented architecture (SOA)&lt;/li&gt;
+&lt;li&gt;Modular monoliths (if you don’t want to take refactoring too seriously)&lt;/li&gt;
+&lt;li&gt;Data Lake and Warehouse products (Snowflake, BigQuery, Databricks)&lt;/li&gt;
+&lt;li&gt;Domain-Driven Design&lt;/li&gt;
+&lt;li&gt;Linux command line (Bash, Zsh, VIM, Tmux, Neovim)&lt;/li&gt;
+&lt;li&gt;Networking basics&lt;/li&gt;
+&lt;li&gt;Cloud Networking experience (BGP, VPC peering)&lt;/li&gt;
+&lt;li&gt;Knowledge of eBPF&lt;/li&gt;
+&lt;li&gt;Security best practices (OWASP, SIEM, SOAR, OpenSSF)&lt;/li&gt;
+&lt;li&gt;Basic understanding of AI/ML concepts&lt;/li&gt;
+&lt;li&gt;Basic data engineering skills (ETL processes, data pipelines)&lt;/li&gt;
+&lt;li&gt;Software system design (singular system)&lt;/li&gt;
+&lt;li&gt;Information System Architecture (multiple systems - systems thinking)&lt;/li&gt;
+&lt;li&gt;If not already listed, you should be familiar with most of the Apache open-source projects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Good luck in your job search you beautiful unicorn! Don’t forget you need to demonstrate all of these skills in your
+interviews at scale and in productions!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Create a site - take two]]></title><description><![CDATA[It’s been a while since I posted my first blog post on this site. Let’s try this again!]]></description><link>https://brandondeval.com/hello-world-again/</link><guid isPermaLink="false">https://brandondeval.com/hello-world-again/</guid><pubDate>Tue, 10 Jun 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;It’s been a while since I posted my first blog post on this site.&lt;/p&gt;
 &lt;p&gt;Let’s try this again!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Blazingly-Fast-Framework create site]]></title><description><![CDATA[This is my first post on my new github static blog! Much Wow! But whyyyy???! Once in a while in my career, I have encountered special issues…]]></description><link>https://brandondeval.com/hello-world/</link><guid isPermaLink="false">https://brandondeval.com/hello-world/</guid><pubDate>Thu, 07 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new github static blog! Much Wow!&lt;/p&gt;
 &lt;p&gt;But whyyyy???!&lt;/p&gt;
 &lt;p&gt;Once in a while in my career, I have encountered special issues, concepts, thoughts,
