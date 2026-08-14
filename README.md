@@ -1,4 +1,14 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+
+## Local development
+
+This repository requires Node.js 24.19.0 and uses npm (not Yarn).
+
+```shell
+npm install
+npm run develop
+```
+
 <p align="center">
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
@@ -29,7 +39,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     ```shell
     cd my-blog-starter/
-    gatsby develop
+    npm run develop
     ```
 
 1.  **Open the source code and start editing!**
