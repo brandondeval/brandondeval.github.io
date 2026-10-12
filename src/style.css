@@ -321,6 +321,85 @@ a:focus {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+  overflow: hidden;
+  border: 1px solid #29374b;
+  border-radius: 10px;
+  background: #101827;
+}
+
+.gatsby-highlight::before {
+  content: attr(data-language);
+  display: block;
+  padding: 0.65rem 1.25rem;
+  border-bottom: 1px solid #29374b;
+  background: #182335;
+  color: #b8c5d8;
+  font: 600 0.7rem/1.5 var(--font-heading);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gatsby-highlight pre {
+  margin: 0;
+  padding: 1.25rem;
+  overflow-x: auto;
+  color: #e2e8f0;
+  tab-size: 2;
+}
+
+.gatsby-highlight pre,
+.gatsby-highlight code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.gatsby-highlight code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.gatsby-highlight .token.comment {
+  color: #a3b2c7;
+}
+
+.gatsby-highlight .token.punctuation {
+  color: #bac6d8;
+}
+
+.gatsby-highlight .token.property,
+.gatsby-highlight .token.header-name {
+  color: #93c5fd;
+}
+
+.gatsby-highlight .token.string,
+.gatsby-highlight .token.url {
+  color: #86efac;
+}
+
+.gatsby-highlight .token.number,
+.gatsby-highlight .token.boolean,
+.gatsby-highlight .token.null {
+  color: #fdba74;
+}
+
+.gatsby-highlight .token.keyword,
+.gatsby-highlight .token.method {
+  color: #c4b5fd;
+}
+
+.gatsby-highlight .token.method {
+  font-weight: 700;
+}
+
+.gatsby-highlight .token.operator {
+  color: #67e8f9;
 }
 
 /* Media queries */

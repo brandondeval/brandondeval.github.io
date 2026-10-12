@@ -4,7 +4,7 @@ date: "2026-10-12"
 description: "The first new HTTP method in 16 years!"
 ---
 
-This June we got something awesome, HTTP **`QUERY`** . I'm late to the party. It's not Graphql Query, its new a HTTP method. It's pretty interesting, and might be an alternative allowing you to throw Graphql in the garbage. So, let's get into it.
+This June we got something awesome, HTTP **`QUERY`** . I'm late to the party. It's not Graphql Query, its new a HTTP method. It's pretty interesting, and might be an alternative allowing you to throw Graphql in the garbage (i'm joking...kind of). So, let's get into it.
 
 HTTP **`QUERY`**  lets you send a structured query in a request body while declaring that the operation is safe and idempotent. It was standardized in RFC 10008 in June 2026.
 https://www.rfc-editor.org/rfc/rfc10008.html
@@ -301,7 +301,7 @@ Content-Type: application/json
 - "Make expensive reads explicitly budgeted"
 
 “Search the orders collection using this criteria.”
-```JSON
+```http
 QUERY /orders
 Content-Type: application/json
 
@@ -314,7 +314,7 @@ Content-Type: application/json
 ```
 
 "Search orders with nested filters"
-```JSON
+```http
 QUERY /v1/retailers/ret_42/orders HTTP/1.1
 Host: api.example.com
 Authorization: Bearer <token>
@@ -355,7 +355,7 @@ Accept: application/json
 ```
 
 "aggregation instead of retrieving rows - serve reports"
-```JSON
+```http
 QUERY /v1/retailers/ret_42/sales HTTP/1.1
 Host: api.example.com
 Content-Type: application/json
@@ -381,7 +381,7 @@ Accept: application/json
 ```
 
 "Paginate against a consistent snapshot - prevent pagination drift"
-```JSON
+```http
 QUERY /v1/retailers/ret_42/orders
 Content-Type: application/json
 
@@ -438,7 +438,7 @@ Response with Snapshot
 
 
 "Fetch several dashboard datasets in one read - fetch multiple resources in a single request(solves over and underfetching)"
-```JSON
+```http
 QUERY /v1/retailers/ret_42/dashboard
 Content-Type: application/json
 
@@ -468,7 +468,7 @@ Content-Type: application/json
 ```
 
 Use the same query for JSON and CSV
-```JSON
+```http
 QUERY /v1/retailers/ret_42/orders
 Content-Type: application/json
 Accept: text/csv
@@ -484,7 +484,7 @@ Accept: text/csv
 
 
 "Make expensive reads explicitly budgeted"
-```JSON
+```http
 QUERY /v1/retailers/ret_42/analytics
 Content-Type: application/json
 
@@ -504,12 +504,19 @@ Content-Type: application/json
 
 
 ## Summary
-Obiviously, all of the examples are based upon the implementation on the server. What this does is open the door for creative problem solving to previous issues / problems with the limitations of **`GET`**, **`POST`**, **`PUT`**, **`DELETE`**, and **`PATCH`**. It means rethinking of using specific technologies as middleware or proxies.
+Obiviously, all of the examples are based upon the implementation on the server. However, this does is open the door for creative problem solving with the past limitations of **`GET`**, **`POST`**, **`PUT`**, **`DELETE`**, and **`PATCH`**. It may allow for rethinking of using specific technologies as middleware or proxies.
 
-For example:
-- solving "Overfetching", a **`QUERY`**-based API would need: select, sparse fields, projections
-- solving "Underfetching", a **`QUERY`**-based API would need: Nested selections or include
-- solving "Batching multiple endpoints / round trips", a **`QUERY`**-based API would need: A composite resource or batch query format
-- solving "Backend N+1", a **`QUERY`**-based API would need: Joins, batching, caching, query planning
+For example, thinking about a new way to solve these problems: 
+
+"Overfetching": a **`QUERY`**-based API would need to implement: select, sparse fields, projections
+
+"Underfetching": a **`QUERY`**-based API would needto implement: Nested selections or include
+
+"Batching multiple endpoints / round trips": a **`QUERY`**-based API would need to implement: A composite resource or batch query format
+
+
+"Backend N+1": a **`QUERY`**-based API would need to implement: Joins, batching, caching, query planning
+
+## Lastly
 
 OpenAPI v3.2.1 includes **`QUERY`**, and Swagger supports v3.2.1
