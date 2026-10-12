@@ -54,5 +54,18 @@
     "dev:v": "gatsby develop --verbose",
     "clean": "gatsby clean",
     "deploy": "gatsby build && gh-pages -d public -b main"
+  },
+  "allowScripts": {
+    "gatsby@5.16.1": true,
+    "gatsby-cli@5.16.0": true,
+    "sharp@0.32.6": true,
+    "lmdb@2.5.2": true,
+    "lmdb@2.5.3": true,
+    "@parcel/watcher@2.6.0": true,
+    "msgpackr-extract@3.0.4": true,
+    "fsevents@2.3.3": true,
+    "core-js": false,
+    "core-js-pure": false,
+    "es5-ext": false
   }
 }
