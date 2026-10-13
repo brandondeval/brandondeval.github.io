@@ -24,24 +24,36 @@ Requests can have characterstics
 - [Idempotent](https://developer.mozilla.org/en-US/docs/Glossary/Idempotent)
 - [Cacheable](https://developer.mozilla.org/en-US/docs/Glossary/Cacheable)
 
+<div class="table-scroll" role="region" aria-label="HTTP method comparison" tabindex="0">
+
 | Method  | Safe   | Idempotent | Cacheable | Request Body | Response Body |   
 | :----:  | :----: | :----:     | :----:    |    :----:    |     :----:    |
 | GET     | 🟢 Yes | 🟢 Yes      | 🟢 Yes    | 🔴 NO        | 🟢 Yes         |
 | POST    | 🔴 NO  | 🟠 Maybe    | 🟠 Maybe  | 🟢 Yes       | 🟢 Yes         |
 | Query   | 🟢 Yes | 🟢 Yes      | 🟢 Yes    | 🟢 Yes       | 🟢 Yes         |
 
+</div>
+
+<p class="table-scroll-hint">Scroll sideways to compare all columns.</p>
+
+#### POST
 
 **`POST`** can be made to be idempotent [based upon the implementation](https://youtu.be/R7s2FVN4c9Q?si=1xhgWH4EZQWEETrn&t=395), and there is a proposed requested header [Idempotency-Key](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Idempotency-Key) for a safe retrying of operations for event-based operations. **`POST`** can be cacheable if using the Cache-Control header. The intention of **`POST`** is the opposite of safe, it's a push mechanism. Pushing data into a datasink with the intentional goal of altering the state of the "server".
 
+#### GET
+
 **`GET`** is a pull operation, you can give a **`GET`** request a body, but it should result in an error from the server. 
+
+
+#### QUERY
 
 **`QUERY`**  is the middle ground, it explicitly gives the body a purpose. It lets you send a structured query in a request body.
 
 When implemented, **`QUERY`** can generate a representation based on the request body. The server may also return `Content-Location` or `Location` headers to identify a URI associated with the result or query. This behavior depends on the server and API design; it is not automatic for every **`QUERY`** request.
 
-`Content-Location`: Identifies a resource holding the result of the query just performed. A **`GET`** to that URI retrieves the same results again.
+`Content-Location` : Identifies a resource holding the result of the query just performed. A **`GET`** to that URI retrieves the same results again.
 
-`Location`: Identifies the equivalent resource, which re-runs the same query. A **`GET`** to that URI repeats the operation against current data without resending the query content; therefore, the result may differ from the original response.
+`Location` : Identifies the equivalent resource, which re-runs the same query. A **`GET`** to that URI repeats the operation against current data without resending the query content; therefore, the result may differ from the original response.
 
 ## Deployment, caching, and privacy notes
 
