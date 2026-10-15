@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkbrandons_blog=self.webpackChunkbrandons_blog||[]).push([[432],{9434:function(e,t,a){a.r(t);var n=a(6540),l=a(3895),s=a(2269);t.default=({data:e,location:t})=>{const a=e.site.siteMetadata.title;return n.createElement(l.A,{location:t,title:a},n.createElement(s.A,{title:"About"}),n.createElement("h1",null,"About"),n.createElement("p",null,"Welcome! This is a space for sharing thoughts, projects, and updates."))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-e8f9ca3dd250c7b93775.js.map
