@@ -270,13 +270,16 @@
 <h2>Interesting domain specific examples (ecommerce)</h2>
 <p><strong><code>QUERY</code></strong> can fit to do more complex operations operations such as:</p>
 <ul>
-<li>“Search the orders collection using this criteria.”</li>
-<li>"aggregation instead of retrieving rows - serve reports"</li>
-<li>"Paginate against a consistent snapshot - prevent pagination drift"</li>
-<li>"fetch multiple resources in a single request(solves over and underfetching)"</li>
-<li>"Make expensive reads explicitly budgeted"</li>
+<li>Search the orders collection using this criteria</li>
+<li>Search the orders collection using this criteria.Search orders with nested filters</li>
+<li>Aggregation instead of retrieving rows - serve reports</li>
+<li>Paginate against a consistent snapshot - prevent pagination drift</li>
+<li>Fetch several dashboard datasets in one read - fetch multiple resources in a single request(solves over and underfetching)</li>
+<li>Use the same query for JSON and CSV</li>
+<li>Make expensive reads explicitly budgeted</li>
 </ul>
-<p>“Search the orders collection using this criteria.”</p>
+<hr>
+<h4>Search the orders collection using this criteria</h4>
 <div class="gatsby-highlight" data-language="http"><pre class="language-http"><code class="language-http"><span class="token query-request-line"><span class="token method keyword">QUERY</span> <span class="token request-target url">/orders</span></span>
 <span class="token header"><span class="token header-name keyword">Content-Type</span><span class="token punctuation">:</span> <span class="token header-value">application/json</span></span>
 <span class="token application-json">
@@ -286,7 +289,8 @@
     <span class="token property">"total"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"gte"</span><span class="token operator">:</span> <span class="token number">10000</span> <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></span></code></pre></div>
-<p>"Search orders with nested filters"</p>
+<hr>
+<h4>Search the orders collection using this criteria.Search orders with nested filters</h4>
 <div class="gatsby-highlight" data-language="http"><pre class="language-http"><code class="language-http"><span class="token query-request-line"><span class="token method keyword">QUERY</span> <span class="token request-target url">/v1/retailers/ret_42/orders</span> <span class="token http-version property">HTTP/1.1</span></span>
 <span class="token header"><span class="token header-name keyword">Host</span><span class="token punctuation">:</span> <span class="token header-value">api.example.com</span></span>
 <span class="token header"><span class="token header-name keyword">Authorization</span><span class="token punctuation">:</span> <span class="token header-value">Bearer &lt;token></span></span>
@@ -324,7 +328,8 @@
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token property">"page"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"limit"</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></span></code></pre></div>
-<p>"aggregation instead of retrieving rows - serve reports"</p>
+<hr>
+<h4>Aggregation instead of retrieving rows - serve reports</h4>
 <div class="gatsby-highlight" data-language="http"><pre class="language-http"><code class="language-http"><span class="token query-request-line"><span class="token method keyword">QUERY</span> <span class="token request-target url">/v1/retailers/ret_42/sales</span> <span class="token http-version property">HTTP/1.1</span></span>
 <span class="token header"><span class="token header-name keyword">Host</span><span class="token punctuation">:</span> <span class="token header-value">api.example.com</span></span>
 <span class="token header"><span class="token header-name keyword">Content-Type</span><span class="token punctuation">:</span> <span class="token header-value">application/json</span></span>
@@ -347,7 +352,8 @@
     <span class="token punctuation">}</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span></span></code></pre></div>
-<p>"Paginate against a consistent snapshot - prevent pagination drift"</p>
+<hr>
+<h4>Paginate against a consistent snapshot - prevent pagination drift</h4>
 <div class="gatsby-highlight" data-language="http"><pre class="language-http"><code class="language-http"><span class="token query-request-line"><span class="token method keyword">QUERY</span> <span class="token request-target url">/v1/retailers/ret_42/orders</span></span>
 <span class="token header"><span class="token header-name keyword">Content-Type</span><span class="token punctuation">:</span> <span class="token header-value">application/json</span></span>
 <span class="token application-json">
@@ -399,7 +405,8 @@ Response with Snapshot
     <span class="token property">"after"</span><span class="token operator">:</span> <span class="token string">"opaque-signed-cursor"</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></span></code></pre></div>
-<p>"Fetch several dashboard datasets in one read - fetch multiple resources in a single request(solves over and underfetching)"</p>
+<hr>
+<h4>Fetch several dashboard datasets in one read - fetch multiple resources in a single request( solves over and underfetching )</h4>
 <div class="gatsby-highlight" data-language="http"><pre class="language-http"><code class="language-http"><span class="token query-request-line"><span class="token method keyword">QUERY</span> <span class="token request-target url">/v1/retailers/ret_42/dashboard</span></span>
 <span class="token header"><span class="token header-name keyword">Content-Type</span><span class="token punctuation">:</span> <span class="token header-value">application/json</span></span>
 <span class="token application-json">
@@ -426,7 +433,8 @@ Response with Snapshot
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></span></code></pre></div>
-<p>Use the same query for JSON and CSV</p>
+<hr>
+<h4>Use the same query for JSON and CSV</h4>
 <div class="gatsby-highlight" data-language="http"><pre class="language-http"><code class="language-http"><span class="token query-request-line"><span class="token method keyword">QUERY</span> <span class="token request-target url">/v1/retailers/ret_42/orders</span></span>
 <span class="token header"><span class="token header-name keyword">Content-Type</span><span class="token punctuation">:</span> <span class="token header-value">application/json</span></span>
 <span class="token header"><span class="token header-name keyword">Accept</span><span class="token punctuation">:</span> <span class="token header-value">text/csv</span></span>
@@ -438,7 +446,8 @@ Response with Snapshot
   <span class="token property">"select"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token string">"currency"</span><span class="token punctuation">,</span> <span class="token string">"totalMinor"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token property">"page"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"limit"</span><span class="token operator">:</span> <span class="token number">10000</span> <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></span></code></pre></div>
-<p>"Make expensive reads explicitly budgeted"</p>
+<hr>
+<h4>Make expensive reads explicitly budgeted</h4>
 <div class="gatsby-highlight" data-language="http"><pre class="language-http"><code class="language-http"><span class="token query-request-line"><span class="token method keyword">QUERY</span> <span class="token request-target url">/v1/retailers/ret_42/analytics</span></span>
 <span class="token header"><span class="token header-name keyword">Content-Type</span><span class="token punctuation">:</span> <span class="token header-value">application/json</span></span>
 <span class="token application-json">
@@ -457,10 +466,10 @@ Response with Snapshot
 <h2>Summary</h2>
 <p>Obiviously, all of the examples are based upon the implementation on the server. However, this does is open the door for creative problem solving with the past limitations of <strong><code>GET</code></strong>, <strong><code>POST</code></strong>, <strong><code>PUT</code></strong>, <strong><code>DELETE</code></strong>, and <strong><code>PATCH</code></strong>. It may allow for rethinking of using specific technologies as middleware or proxies.</p>
 <p>For example, thinking about a new way to solve these problems:</p>
-<p>"Overfetching": a <strong><code>QUERY</code></strong>-based API would need to implement: select, sparse fields, projections</p>
-<p>"Underfetching": a <strong><code>QUERY</code></strong>-based API would needto implement: Nested selections or include</p>
-<p>"Batching multiple endpoints / round trips": a <strong><code>QUERY</code></strong>-based API would need to implement: A composite resource or batch query format</p>
-<p>"Backend N+1": a <strong><code>QUERY</code></strong>-based API would need to implement: Joins, batching, caching, query planning</p>
+<p><code>Overfetching</code>: a <strong><code>QUERY</code></strong>-based API would need to implement: select, sparse fields, projections</p>
+<p><code>Underfetching</code>: a <strong><code>QUERY</code></strong>-based API would needto implement: Nested selections or include</p>
+<p><code>Batching multiple endpoints</code>: a <strong><code>QUERY</code></strong>-based API would need to implement: A composite resource or batch query format</p>
+<p><code>Backend N+1</code>: a <strong><code>QUERY</code></strong>-based API would need to implement: Joins, batching, caching, query planning</p>
 <h2>Lastly</h2>
 <p>OpenAPI v3.2.1 includes <strong><code>QUERY</code></strong>, and Swagger supports v3.2.1</p></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#181828;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/a9fbcc8a9645c9fa97fea47da2b018b3/d4bf4/brandon-profile.avif 50w,/static/a9fbcc8a9645c9fa97fea47da2b018b3/ee81f/brandon-profile.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/a9fbcc8a9645c9fa97fea47da2b018b3/3faea/brandon-profile.webp 50w,/static/a9fbcc8a9645c9fa97fea47da2b018b3/6a679/brandon-profile.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/a9fbcc8a9645c9fa97fea47da2b018b3/e5610/brandon-profile.png" data-srcset="/static/a9fbcc8a9645c9fa97fea47da2b018b3/e5610/brandon-profile.png 50w,/static/a9fbcc8a9645c9fa97fea47da2b018b3/e9b55/brandon-profile.png 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/a9fbcc8a9645c9fa97fea47da2b018b3/d4bf4/brandon-profile.avif 50w,/static/a9fbcc8a9645c9fa97fea47da2b018b3/ee81f/brandon-profile.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/a9fbcc8a9645c9fa97fea47da2b018b3/3faea/brandon-profile.webp 50w,/static/a9fbcc8a9645c9fa97fea47da2b018b3/6a679/brandon-profile.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/a9fbcc8a9645c9fa97fea47da2b018b3/e5610/brandon-profile.png" srcSet="/static/a9fbcc8a9645c9fa97fea47da2b018b3/e5610/brandon-profile.png 50w,/static/a9fbcc8a9645c9fa97fea47da2b018b3/e9b55/brandon-profile.png 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><p>Written by <strong>Brandon Devaleriola</strong> <!-- -->who lives and works in Remote Land.<!-- --> <a href="https://www.linkedin.com/in/brandon-devaleriola-3199577b/">You can contact me on LinkedIn</a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/developer-table-stakes-2025/">← <!-- -->Developer Table Stakes in 2025</a></li><li></li></ul></nav></main><footer>© <!-- -->2026</footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/new-http-method/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
@@ -468,4 +477,4 @@ Response with Snapshot
           >
             window.___chunkMapping="{\"app\":[\"/app-604a102fab75a9ce96cb.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-f66c2b4c8c8cbf26b0d4.js\"],\"component---src-pages-about-js\":[\"/component---src-pages-about-js-e8f9ca3dd250c7b93775.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-fddc7ab91644913dad37.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-18538eacaf20fda22fb9.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-3e0f9c06a193275660cb.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="a83539704b758255b324";</script><script src="/webpack-runtime-55a5b4c7670f4824052a.js" async></script><script src="/framework-199dee5de3ccbda17832.js" async></script><script src="/app-604a102fab75a9ce96cb.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="d9a7da581ac6921c6a05";</script><script src="/webpack-runtime-55a5b4c7670f4824052a.js" async></script><script src="/framework-199dee5de3ccbda17832.js" async></script><script src="/app-604a102fab75a9ce96cb.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
