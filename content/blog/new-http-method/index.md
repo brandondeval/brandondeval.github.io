@@ -358,13 +358,18 @@ Content-Type: application/json
 ## Interesting domain specific examples (ecommerce)
 
 **`QUERY`** can fit to do more complex operations operations such as:
-- “Search the orders collection using this criteria.”
-- "aggregation instead of retrieving rows - serve reports"
-- "Paginate against a consistent snapshot - prevent pagination drift"
-- "fetch multiple resources in a single request(solves over and underfetching)"
-- "Make expensive reads explicitly budgeted"
+- Search the orders collection using this criteria
+- Search the orders collection using this criteria.Search orders with nested filters
+- Aggregation instead of retrieving rows - serve reports
+- Paginate against a consistent snapshot - prevent pagination drift
+- Fetch several dashboard datasets in one read - fetch multiple resources in a single request(solves over and underfetching)
+- Use the same query for JSON and CSV
+- Make expensive reads explicitly budgeted
 
-“Search the orders collection using this criteria.”
+---
+
+#### Search the orders collection using this criteria
+
 ```http
 QUERY /orders
 Content-Type: application/json
@@ -377,7 +382,9 @@ Content-Type: application/json
 }
 ```
 
-"Search orders with nested filters"
+---
+
+#### Search the orders collection using this criteria.Search orders with nested filters
 ```http
 QUERY /v1/retailers/ret_42/orders HTTP/1.1
 Host: api.example.com
@@ -418,7 +425,9 @@ Accept: application/json
 }
 ```
 
-"aggregation instead of retrieving rows - serve reports"
+---
+
+#### Aggregation instead of retrieving rows - serve reports
 ```http
 QUERY /v1/retailers/ret_42/sales HTTP/1.1
 Host: api.example.com
@@ -444,7 +453,9 @@ Accept: application/json
 }
 ```
 
-"Paginate against a consistent snapshot - prevent pagination drift"
+---
+
+#### Paginate against a consistent snapshot - prevent pagination drift
 ```http
 QUERY /v1/retailers/ret_42/orders
 Content-Type: application/json
@@ -501,7 +512,9 @@ Response with Snapshot
 
 
 
-"Fetch several dashboard datasets in one read - fetch multiple resources in a single request(solves over and underfetching)"
+---
+
+#### Fetch several dashboard datasets in one read - fetch multiple resources in a single request( solves over and underfetching )
 ```http
 QUERY /v1/retailers/ret_42/dashboard
 Content-Type: application/json
@@ -531,7 +544,9 @@ Content-Type: application/json
 }
 ```
 
-Use the same query for JSON and CSV
+---
+
+#### Use the same query for JSON and CSV
 ```http
 QUERY /v1/retailers/ret_42/orders
 Content-Type: application/json
@@ -547,7 +562,9 @@ Accept: text/csv
 ```
 
 
-"Make expensive reads explicitly budgeted"
+---
+
+#### Make expensive reads explicitly budgeted
 ```http
 QUERY /v1/retailers/ret_42/analytics
 Content-Type: application/json
@@ -572,14 +589,13 @@ Obiviously, all of the examples are based upon the implementation on the server.
 
 For example, thinking about a new way to solve these problems: 
 
-"Overfetching": a **`QUERY`**-based API would need to implement: select, sparse fields, projections
+`Overfetching`: a **`QUERY`**-based API would need to implement: select, sparse fields, projections
 
-"Underfetching": a **`QUERY`**-based API would needto implement: Nested selections or include
+`Underfetching`: a **`QUERY`**-based API would needto implement: Nested selections or include
 
-"Batching multiple endpoints / round trips": a **`QUERY`**-based API would need to implement: A composite resource or batch query format
+`Batching multiple endpoints`: a **`QUERY`**-based API would need to implement: A composite resource or batch query format
 
-
-"Backend N+1": a **`QUERY`**-based API would need to implement: Joins, batching, caching, query planning
+`Backend N+1`: a **`QUERY`**-based API would need to implement: Joins, batching, caching, query planning
 
 ## Lastly
 
