@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "brandons blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "starter blog",
   "version": "0.2.0",
   "packageManager": "npm@11.17.0",
   "engines": {
@@ -10,7 +10,7 @@
   },
   "author": "Brandon Devaleriola <brandondeval@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/brandondeval/brandondeval.github.io.git/issues"
   },
   "dependencies": {
     "gatsby": "^5.16.1",
@@ -39,14 +39,14 @@
   "devDependencies": {
     "prettier": "^3.6.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://brandondeval.com",
   "keywords": [
     "gatsby"
   ],
   "license": "0BSD",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/brandondeval/brandondeval.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",

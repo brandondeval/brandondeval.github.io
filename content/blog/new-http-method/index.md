@@ -49,11 +49,63 @@ Requests can have characterstics
 
 **`QUERY`**  is the middle ground, it explicitly gives the body a purpose. It lets you send a structured query in a request body.
 
-When implemented, **`QUERY`** can generate a representation based on the request body. The server may also return `Content-Location` or `Location` headers to identify a URI associated with the result or query. This behavior depends on the server and API design; it is not automatic for every **`QUERY`** request.
+The server can also give you URLs for the results or the query itself. These headers are optional. Here's an illustrative API that returns both:
 
-`Content-Location` : Identifies a resource holding the result of the query just performed. A **`GET`** to that URI retrieves the same results again.
+```http
+QUERY /orders/search HTTP/1.1
+Host: api.example.com
+Content-Type: application/json
 
-`Location` : Identifies the equivalent resource, which re-runs the same query. A **`GET`** to that URI repeats the operation against current data without resending the query content; therefore, the result may differ from the original response.
+{"status":"paid"}
+```
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Location: /order-search-results/result_123
+Location: /order-searches/paid
+
+{"items":[{"id":"ord_100"},{"id":"ord_101"}]}
+```
+
+##### Content-Location: "Get these results again"
+
+`Content-Location` points to the results of the query just performed. In this example, the API keeps a snapshot:
+
+```http
+GET /order-search-results/result_123 HTTP/1.1
+Host: api.example.com
+```
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"items":[{"id":"ord_100"},{"id":"ord_101"}]}
+```
+
+Even if another order is paid afterward, this example's snapshot still contains those two orders. That's useful for reopening the exact results used in a report.
+
+##### Location: "Run this query again"
+
+`Location` in a successful **`QUERY`** response points to a URL that repeats the query with **`GET`**, without resending the JSON body. Suppose `ord_102` is now paid:
+
+```http
+GET /order-searches/paid HTTP/1.1
+Host: api.example.com
+Cache-Control: no-cache
+```
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"items":[{"id":"ord_100"},{"id":"ord_101"},{"id":"ord_102"}]}
+```
+
+That makes a handy bookmark for checking paid orders again. `no-cache` requires caches to validate before reuse.
+
+These URLs can expire; the API decides their lifetime. A `200 OK` with `Location` doesn't redirect the client automatically. See [RFC 10008, sections 2.3–2.4](https://www.rfc-editor.org/rfc/rfc10008.html#section-2.3).
 
 ## Deployment, caching, and privacy notes
 
